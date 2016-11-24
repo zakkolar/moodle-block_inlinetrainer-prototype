@@ -1,5 +1,5 @@
 /* jshint devel: true  */
-define(['block_inlinetrainer/step'],function(Step){
+define(['block_inlinetrainer/step','block_inlinetrainer/hint'],function(Step,hint){
 	return [
 		new Step({
 			text:"Navigate to the course page",
@@ -13,6 +13,7 @@ define(['block_inlinetrainer/step'],function(Step){
 				});
 				
 			}
+			
 		}),
 		new Step({
 			text: "Click &quot;Turn editing on&quot;",
@@ -24,6 +25,9 @@ define(['block_inlinetrainer/step'],function(Step){
 						step.complete();
 					}
 				});
+			},
+			help:function(){
+				hint('.singlebutton [value="Turn editing on"]');
 			}
 		}),
 		new Step({
@@ -51,6 +55,9 @@ define(['block_inlinetrainer/step'],function(Step){
 					});
 				},40);
 				
+			},
+			help: function(){
+				hint('.section-modchooser');
 			}
 		})
 	];

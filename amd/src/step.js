@@ -15,6 +15,8 @@ define([],function(){
 		this._watchComplete=params.watchComplete || function(){};
 		this._watchUncomplete=params.watchUncomplete || function(){};
 
+		this._help=params.help || null;
+
 		this._id=guid();
 
 		this._subscriptions=[];
@@ -62,6 +64,14 @@ define([],function(){
 		},
 		subscribe: function(callback){
 			this._subscriptions.push(callback);
+		},
+		hasHelp: function(){
+			return this._help!=null;
+		},
+		help: function(){
+			if(this.hasHelp()){
+				this._help();
+			}
 		}
 
 

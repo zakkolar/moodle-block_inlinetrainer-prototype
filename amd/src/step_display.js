@@ -16,11 +16,22 @@ define(['jquery'],function($){
 			var myStep = step;
 			if(myStep.isComplete()){
 				$(this).addClass('complete');
+				$(this).children('.block_inlinetrainer_help').hide();
 			}
 			else{
 				$(this).removeClass('complete');
+				$(this).children('.block_inlinetrainer_help').show();
 			}
 		}).trigger('completeChange');
+
+		if(step.hasHelp()){
+			var helpLink=$('<a class="block_inlinetrainer_help" href="#">?</a>');
+			helpLink.click(function(e){
+				step.help();
+				e.preventDefault();
+			});
+			el.append(helpLink);
+		}
 
 		this.getElement=function(){
 			return el;
