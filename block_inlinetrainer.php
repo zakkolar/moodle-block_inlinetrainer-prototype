@@ -8,8 +8,10 @@ class block_inlinetrainer extends block_base {
     public function get_content() {
     	global $PAGE;
 	    
+    	$this->page->requires->js_call_amd("block_inlinetrainer/demo", "run", ["#test"]);
+
 	    $this->content         =  new stdClass();
-	    $this->content->text   = 'This is Zak\'s inline trainer plugin';
+	    $this->content->text   = '<ol id="test"><i>Loading steps...</li></ol>';
 	    return $this->content;
 	}
 
