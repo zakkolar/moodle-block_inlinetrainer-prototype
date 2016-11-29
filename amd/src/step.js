@@ -66,7 +66,7 @@ define([],function(){
 			this._subscriptions.push(callback);
 		},
 		hasHelp: function(){
-			return this._help!=null;
+			return this._help!==null;
 		},
 		help: function(){
 			if(this.hasHelp()){

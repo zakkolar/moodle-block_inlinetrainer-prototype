@@ -9,7 +9,7 @@ define(['jquery'],function($){
 		var id = getHtmlId(step);
 		el.attr('id',id);
 		el.html(step.getText());
-		step.subscribe(function(complete){
+		step.subscribe(function(){
 			el.trigger('completeChange');
 		});
 		el.on('completeChange',function(){
@@ -35,7 +35,7 @@ define(['jquery'],function($){
 
 		this.getElement=function(){
 			return el;
-		}
+		};
 
 	}
 

@@ -40,7 +40,7 @@ define(['block_inlinetrainer/step','block_inlinetrainer/hint'],function(Step,hin
 					$('.section-modchooser-text').unbind('click');
 					step.complete();
 					});
-				})
+				});
 				
 			},
 			watchUncomplete: function(){
