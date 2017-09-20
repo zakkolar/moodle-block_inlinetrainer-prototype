@@ -8,11 +8,11 @@ class block_inlinetrainer extends block_base {
     public function get_content() {
     	global $PAGE;
 	    
-        $this->page->requires->js_call_amd("block_inlinetrainer/demo", "run", ["#test"]);
+        $this->page->requires->js_call_amd("block_inlinetrainer/demo", "run", ["#block_inlinetrainer-body"]);
 
 	    $this->content         =  new stdClass();
-        $this->content->text   = '<b>Upload file</b>';
-	    $this->content->text  .= '<ol id="test"><i>Loading steps...</li></ol>';
+        $this->content->text   = '<b id="block_inlinetrainer-title"></b>';
+	    $this->content->text  .= '<ol id="block_inlinetrainer-body"><i>Loading steps...</li></ol>';
         $this->content->text  .= "<style type='text/css'>
         .block_inlinetrainer_overlay {
         position: fixed;
